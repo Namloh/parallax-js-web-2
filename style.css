@@ -1,0 +1,157 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+.tank{
+    position: relative;  
+}
+.gun{
+    position: relative;
+}
+.kanon{
+    position: absolute;
+    width: 20%;
+    z-index: 2;
+    top: 650px;
+    left: 15%;
+}
+.flash{
+    position: absolute;
+    left: 17%;
+    top: 450px;
+    visibility: hidden;
+
+}
+
+.classname {
+    animation-name: shoot;
+    animation-duration: 0.05s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: linear;
+    position: absolute;
+    width: 20%;
+    left: 17%;
+    top: 450px;
+    z-index: 2;
+    visibility: hidden;
+}
+
+@keyframes shoot {
+    0%, 100%{
+        transform: scale(1);
+        
+    }
+    50%{
+        visibility: visible;
+        transform:scale(2);
+        opacity: 0.5;
+    }
+}
+
+.karoserie{
+    width: 100%;
+    position: absolute;
+    top: 6px;  
+}
+
+
+.scope{
+    position: absolute;
+    left: -1435px;
+    opacity: 0;
+    z-index: 3;
+}
+
+.listy{
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "plusy minusy"
+    "plusy-text minusy-text";
+}
+#plusy {
+    grid-area: plusy;
+    margin-bottom: 0;
+}
+#plusy-text{
+    grid-area: plusy-text;
+    list-style: none;
+    margin-right: 5%;
+}
+#minusy{
+    grid-area: minusy;
+    margin-bottom: 0;
+}
+#minusy-text{
+    grid-area: minusy-text;
+    list-style: none;
+    margin-right: 5%;
+    
+}
+
+
+
+
+header  {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: aliceblue;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    padding: 1rem;
+}
+header p{
+    margin: 5px;
+}
+h2{
+    margin-top: 0;
+}
+small{
+    font-size: 0.4em;
+}
+
+.parallax {
+    background-image: url('./images/field2.0.jpg');
+    height: 110%;
+    z-index: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.popis{
+    background-color: aliceblue;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    padding: 5rem;
+}
+
+#most{
+    background-image: url('./images/twisted\ steel.jpg');
+    
+}
+#skola{
+    background-image: url('./images/skola.jpeg');
+}
+
+footer{
+    background-color: aliceblue;
+    text-align: center;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    padding: 1rem;
+}
+
+

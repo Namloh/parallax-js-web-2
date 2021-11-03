@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"> 
+    <title>nicitel rodin 4000</title>
+</head>
+<body>
+    <header>
+        <h1>Top 3 lokace pro vyzkoušení vašeho nového tanku</h1>
+        <p>Myš a scroll: míření</p>
+        <p>Levé myšítko: střelba </p>
+        <p>Pravé myšítko: zamířit</p> 
+    </header>
+    
+    <div class="tank" >
+        <div class="gun">
+            <img class="scope" src="./images/skopenzie.png" draggable="false">
+            <img class="flash" src="./images/flash.png" draggable="false">
+            <img class="kanon" src="./images/lepsikanon.png" draggable="false">
+        </div>
+        <img class="karoserie" src="./images/karoserie i guess.png">
+    </div>
+
+    
+    <div id="pole" class="parallax"></div>
+    
+
+        <section class="popis">
+            <h2>Prázdné/pronajaté pole</h2>
+        <div class="listy">
+            <h3 id="plusy">Plusy</h3>
+            <ul id="plusy-text">
+                <li>Klid</li>
+                <li>Volný prostor jen pro vaše střílení</li>
+            </ul>
+            <h3 id="minusy">Mínusy</h3>
+            <ul id="minusy-text">
+                <li>Žádné přírodní terče</li>
+                <li>Monžnost, že si na vás bude mistní farmář stěžovat</li>
+            </ul>
+        </div>
+        </section>
+        
+        <div class="tank" >
+            <div class="gun">
+                <img class="scope" src="./images/skopenzie.png" draggable="false">
+                <img class="flash" src="./images/flash.png" draggable="false">
+                <img class="kanon" src="./images/lepsikanon.png" draggable="false">
+            </div>
+            <img class="karoserie" src="./images/karoserie i guess.png">
+        </div>
+
+    <div id="most" class="parallax"></div>
+    
+    <section class="popis">
+        <h2>Most</h2>
+    <div class="listy">
+        <h3 id="plusy">Plusy</h3>
+        <ul id="plusy-text">
+            <li>Hodně přírodních terčů</li>
+            <li></li>
+        </ul>
+        <h3 id="minusy">Mínusy</h3>
+        <ul id="minusy-text">
+            <li>Možnost překročení nosní kapacity a <br>natlučení nosu <small>pun intended</small></li>
+            <li>Zákony</li>
+        </ul>
+    </div>
+    </section>
+         <div class="tank" >
+            <div class="gun">
+                <img class="scope" src="./images/skopenzie.png" draggable="false">
+                <img class="flash" src="./images/flash.png" draggable="false">
+                <img class="kanon" src="./images/lepsikanon.png" draggable="false">
+            </div>
+            <img class="karoserie" src="./images/karoserie i guess.png">
+        </div>
+    <div id="skola" class="parallax"></div>
+    <section class="popis">
+        <h2>Ehh... jak so to sem dostalo?</h2>
+    <p>Uhm--asi--ugh nějaký...bug nebo něco.</p>
+    <p>To musel být takový ten kosmický bit-flip jinak si to nedokážu vysvětlit</p>
+    </section>
+
+
+    <footer>
+        <p>Z právnických důvodů tuto stránku neberte jako oficiální radu.</p>
+    </footer>
+
+    <script type="text/javascript">
+        
+        document.addEventListener("mousemove", function(e){
+            const gun = document.querySelectorAll(".gun");
+            
+
+            for (let i = 0; i<gun.length;i++){
+                gun[i].style.left = e.pageX - 500 + "px"; 
+                
+            }
+            
+
+        })
+
+        document.addEventListener("click", function(e){
+            const element = document.querySelectorAll('.flash');
+            
+            for (let i = 0; i<element.length;i++){
+                element[i].classList.remove('classname');
+                void element[i].offsetWidth;
+                element[i].classList.add('classname');
+            
+            }
+        })
+        
+        window.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("mousedown", function(e){
+            
+            const scope = document.querySelectorAll(".scope");
+            const kanon = document.querySelectorAll(".kanon");
+            const bg = document.querySelectorAll(".parallax");
+            if(event.which == 3){
+                for (let i = 0; i<scope.length;i++){
+                    kanon[i].style.opacity = 0;
+                    scope[i].style.opacity = 1;
+                    bg[i].style.backgroundSize = 200 + "%";
+                    
+                }
+            }
+            
+        })
+        document.addEventListener("mouseup", function(e){
+            
+            const scope = document.querySelectorAll(".scope");
+            const kanon = document.querySelectorAll(".kanon");
+            const bg = document.querySelectorAll(".parallax");
+            if(event.which == 3){
+                for (let i = 0; i<scope.length;i++){
+                    
+                    kanon[i].style.opacity = 1;
+                    scope[i].style.opacity = 0;
+                    bg[i].style.backgroundSize = "cover";
+            
+                }
+            }
+            
+        })
+   
+    </script>
+
+</body>
+</html>
